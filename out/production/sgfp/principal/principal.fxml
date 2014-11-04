@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="768.0" prefWidth="1024.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="principal.Controller">
+  <children>
+    <AnchorPane id="principal" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <MenuBar id="menuBarra" layoutX="0.0" layoutY="0.0" prefWidth="1024.0">
+          <menus>
+            <Menu id="arquivo" mnemonicParsing="false" text="Arquivo" fx:id="arquivo">
+              <items>
+                <MenuItem id="fechar" mnemonicParsing="false" text="Fechar" fx:id="fechar" />
+              </items>
+            </Menu>
+            <Menu id="editar" mnemonicParsing="false" text="Editar" fx:id="editar">
+              <items>
+                <MenuItem id="deletar" mnemonicParsing="false" text="Deletar" fx:id="deletar" />
+              </items>
+            </Menu>
+            <Menu id="ajuda" mnemonicParsing="false" text="Ajuda" fx:id="ajuda">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Sobre" fx:id="sobre" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+        <SplitPane dividerPositions="0.22504892367906065" focusTraversable="true" layoutX="0.0" layoutY="24.0" prefHeight="703.0" prefWidth="1024.0">
+          <items>
+            <AnchorPane fx:id="barraTransacoes" minHeight="0.0" minWidth="0.0" prefHeight="697.0" prefWidth="232.9998779296875">
+              <children>
+                <ListView layoutX="0.0" layoutY="0.0" prefHeight="702.0" prefWidth="226.0">
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </ListView>
+                <Label id="transacoes" layoutX="14.0" layoutY="6.0" text="Transações">
+                  <font>
+                    <Font name="System Bold" size="16.0" />
+                  </font>
+                </Label>
+                <Label id="todasascontas" layoutX="14.0" layoutY="28.0" text="Todas as Contas" />
+              </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+              <children>
+                <TableView fx:id="tabelatransacoes" disable="false" editable="false" focusTraversable="true" layoutX="0.0" layoutY="0.0" prefHeight="666.0" prefWidth="790.0" tableMenuButtonVisible="false" visible="true">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Data" fx:id="data" />
+                    <TableColumn prefWidth="75.0" text="Tipo" fx:id="tipo" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="339.0" text="Descrição" fx:id="descricao" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="146.0" text="Categoria" fx:id="categoria" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="Valor" fx:id="valor" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="78.0" text="Status" fx:id="status" />
+                  </columns>
+                </TableView>
+                <ToolBar layoutX="-1.0" layoutY="660.0" prefHeight="41.0" prefWidth="790.0">
+                  <items>
+                    <Button fx:id="receita" mnemonicParsing="false" onAction="#receita" text="Receita" wrapText="false" />
+                    <Button fx:id="despesa" mnemonicParsing="false" onAction="#despesa" text="Despesa" />
+                    <Button fx:id="edita" mnemonicParsing="false" onAction="#edita" text="Edita" />
+                    <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" text="Remove" />
+                    <VBox prefHeight="31.0" prefWidth="166.0" />
+                    <VBox prefHeight="24.0" prefWidth="100.0" />
+                    <Button mnemonicParsing="false" onAction="#transferir" text="Transferir" />
+                    <Button fx:id="config" mnemonicParsing="false" onAction="#config" text="Configurações" />
+                  </items>
+                </ToolBar>
+              </children>
+            </AnchorPane>
+          </items>
+        </SplitPane>
+        <ToolBar layoutX="1.0" layoutY="727.0" prefHeight="41.0" prefWidth="1024.0">
+          <items>
+            <HBox alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="200.0" />
+          </items>
+        </ToolBar>
+      </children>
+    </AnchorPane>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>
